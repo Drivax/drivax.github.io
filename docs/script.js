@@ -277,9 +277,12 @@ class MarkdownLoader {
 
         // Try multiple path strategies for better compatibility
         const pathsToTry = [
-            `./${section}.md`,           // Relative to current directory
-            `${section}.md`,             // Direct relative path
-            `/${section}.md`             // Absolute from root (for some GitHub Pages setups)
+            `./docs/${section}.md`,      // Root index.html -> docs content
+            `docs/${section}.md`,        // Direct relative path from site root
+            `./${section}.md`,           // Fallback for docs-based hosting
+            `${section}.md`,             // Direct relative fallback
+            `/${section}.md`,            // Absolute root fallback
+            `/docs/${section}.md`        // Absolute docs path fallback
         ];
 
         let lastError = null;
