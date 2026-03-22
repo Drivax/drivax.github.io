@@ -749,7 +749,7 @@ button:focus-visible {
     }
 
     .header-title { display: flex; align-items: center; flex: 1; min-width: 0; }
-    .header-nav { display: none; }
+    .header-nav { display: block; }
 
     /* Adjust controls spacing on mobile */
     .header-controls {

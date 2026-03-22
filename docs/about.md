@@ -2,8 +2,8 @@
 	<div class="about-hero-copy">
 		<p class="eyebrow">About me</p>
 		<h1 class="title">Alexandre Lalance</h1>
-		<p class="lead">Machine learning and quantitative research engineer with a strong foundation in applied mathematics, statistical modelling and end-to-end ML delivery. I build decision-oriented systems that combine rigorous modelling, domain constraints and practical interfaces.</p>
-		<p>Today I work at Credit Agricole S.A. on regulatory and climate-risk modelling, after training in applied mathematics and statistics at Paris-Saclay and Sorbonne Universite. My focus is on high-value AI systems: predictive modelling, optimization, time-series learning, reinforcement learning and explainable workflows that stand up in production environments.</p>
+		<p class="lead">Machine learning and quantitative research engineer with a strong foundation in applied mathematics, statistical modelling and end-to-end ML delivery. </p>
+		<p>Today I work at Credit Agricole S.A. on regulatory modelling, after training in applied mathematics and statistics at Paris-Saclay and Sorbonne Universite. My focus is on high-value machine learning systems: predictive modelling, optimization, time-series learning, reinforcement learning and explainable workflows that stand up in production environments.</p>
 		<div class="about-highlights">
 			<span class="metric-pill">Climate risk and Basel models</span>
 			<span class="metric-pill">Python, SQL, PyTorch, AWS</span>
@@ -103,6 +103,24 @@
 				<div class="project-links">
 					<a href="https://github.com/Drivax/Aerospace-Supply-Chain-Optimization" target="_blank" rel="noreferrer">View Repository</a>
 					<a href="https://github.com/Drivax/Aerospace-Supply-Chain-Optimization/blob/main/notebooks/04_results.ipynb" target="_blank" rel="noreferrer">Open Notebook</a>
+				</div>
+			</div>
+		</article>
+
+		<article class="project-card project-card-featured">
+			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Catan/main/best_parameters_20260320_162409.png" alt="Catan strategy optimization best parameter search visualization" loading="lazy">
+			<div class="project-card-body">
+				<h3>Catan Best Strategy Explorer</h3>
+				<p class="project-summary">Fun side project exploring how to find strong Catan strategies through simulation and parameter search across different gameplay policies.</p>
+				<div class="project-metrics">
+					<span class="project-tag">Game strategy</span>
+					<span class="project-tag">Parameter search</span>
+					<span class="project-tag">Simulation</span>
+				</div>
+				<p class="project-notes">Built as an experimental sandbox to compare setups and identify robust parameter combinations for better decision-making in Catan.</p>
+				<div class="project-links">
+					<a href="https://github.com/Drivax/Catan" target="_blank" rel="noreferrer">View Repository</a>
+					<a href="https://github.com/Drivax/Catan" target="_blank" rel="noreferrer">Open Project</a>
 				</div>
 			</div>
 		</article>

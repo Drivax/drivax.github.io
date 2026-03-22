@@ -109,14 +109,14 @@ class MobileNavigation {
             document.body.classList.add('menu-open');
             // Prevent background scrolling on mobile
             document.body.style.overflow = 'hidden';
+            button.setAttribute('aria-expanded', 'true');
         } else {
             header.classList.remove('menu-open');
             document.body.classList.remove('menu-open');
             // Restore background scrolling
             document.body.style.overflow = '';
+            button.setAttribute('aria-expanded', 'false');
         }
-        
-        button.setAttribute('aria-expanded', this.menuOpen.toString());
     }
 }
 
