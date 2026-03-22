@@ -33,7 +33,7 @@
 
 <section id="projects" class="about-section-block">
 	<h2 class="title">Featured Projects</h2>
-	<p class="section-intro">A selection of ML and optimization projects built around aerospace, telemetry and sequential decision-making. Each card links to the repository and the main notebook used to explore results.</p>
+	<p class="section-intro">A selection of ML, optimization and fun side projects built around aerospace, board games or basically anything fun to explore. Each card links to the repository and the main notebook used to explore results.</p>
 	<div class="project-grid project-grid-featured">
 		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Gym-lunar-lander/main/trajectories.png" alt="Trajectory visualization for Gym Lunar Lander" loading="lazy">
@@ -108,10 +108,10 @@
 		</article>
 
 		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Catan/main/best_parameters_20260320_162409.png" alt="Catan strategy optimization best parameter search visualization" loading="lazy">
+			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Catan/main/fine_tuning_results/best_parameters_20260320_162409.png" alt="Catan strategy optimization best parameter search visualization" loading="lazy">
 			<div class="project-card-body">
 				<h3>Catan Best Strategy Explorer</h3>
-				<p class="project-summary">Fun side project exploring how to find strong Catan strategies through simulation and parameter search across different gameplay policies.</p>
+				<p class="project-summary">Fun side project ( in french )exploring how to find strong Catan strategies through simulation and parameter search across different gameplay policies.</p>
 				<div class="project-metrics">
 					<span class="project-tag">Game strategy</span>
 					<span class="project-tag">Parameter search</span>
