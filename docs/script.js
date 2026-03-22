@@ -275,14 +275,17 @@ class MarkdownLoader {
         const contentElement = document.getElementById(`${section}-content`);
         if (!contentElement) return;
 
-        // Try multiple path strategies for better compatibility
+        // GitHub Pages processes markdown through Jekyll, so prefer static HTML fragments.
         const pathsToTry = [
-            `./docs/${section}.md`,      // Root index.html -> docs content
-            `docs/${section}.md`,        // Direct relative path from site root
-            `./${section}.md`,           // Fallback for docs-based hosting
-            `${section}.md`,             // Direct relative fallback
-            `/${section}.md`,            // Absolute root fallback
-            `/docs/${section}.md`        // Absolute docs path fallback
+            `./docs/${section}.html`,
+            `docs/${section}.html`,
+            `/docs/${section}.html`,
+            `./docs/${section}.md`,
+            `docs/${section}.md`,
+            `./${section}.md`,
+            `${section}.md`,
+            `/${section}.md`,
+            `/docs/${section}.md`
         ];
 
         let lastError = null;
@@ -292,8 +295,10 @@ class MarkdownLoader {
                 console.log(`Trying to fetch: ${fullPath}`);
                 const response = await fetch(fullPath);
                 if (response.ok) {
-                    const markdown = await response.text();
-                    const html = this.parseMarkdown(markdown);
+                    const rawContent = await response.text();
+                    const html = fullPath.endsWith('.html')
+                        ? rawContent
+                        : this.parseMarkdown(rawContent);
                     contentElement.innerHTML = html;
                     // Apply hover effect to new content
                     if (typeof window.applyBHoverEffect === 'function') {
