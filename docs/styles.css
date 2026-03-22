@@ -335,91 +335,33 @@ body {
     text-underline-offset: 2px;
 }
 
-/* Mobile navigation - completely override everything */
+/* Mobile navigation - inline (no dropdown overlay) */
 @media (max-width: 640px) {
     .mobile-nav-menu {
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100vw !important;
-        height: 100vh !important;
-        background-color: color-mix(in srgb, var(--color-global-bg) 98%, transparent) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        z-index: 150 !important;
-        display: none !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 2rem !important;
-        padding: 2rem !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-        transform: none !important;
-        inset: 0 !important;
+        display: flex;
+        position: static;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0 0 0;
     }
     
     .mobile-nav-menu > a {
-        font-size: 1.5rem !important;
-        padding: 1rem 2rem !important;
-        border-radius: 0.5rem !important;
-        transition: opacity 0.2s ease !important;
-        text-align: center !important;
-        min-width: 200px !important;
-        background-color: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
-        border: 1px solid var(--color-accent) !important;
-        color: var(--color-accent) !important;
-        text-decoration: none !important;
-        display: block !important;
-        margin: 0 !important;
+        font-size: 0.9rem;
+        padding: 0.35rem 0.7rem;
+        border-radius: 9999px;
+        border: 1px solid var(--color-accent);
+        background-color: color-mix(in srgb, var(--color-accent) 8%, transparent);
+        border-left: 1px solid var(--color-accent);
     }
     
     .mobile-nav-menu > a:hover {
-        background-color: var(--color-accent) !important;
-        color: var(--color-global-bg) !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px color-mix(in srgb, var(--color-accent) 30%, transparent) !important;
-        text-decoration: none !important;
+        background-color: var(--color-accent);
+        color: var(--color-global-bg);
+        text-decoration: none;
     }
 }
-
-/* Show mobile menu when menu-open class is present */
-.group.menu-open .mobile-nav-menu {
-    display: flex !important;
-    z-index: 150 !important;
-}
-
-/* Mobile menu button improvements */
-#toggle-navigation-menu {
-    z-index: 200; /* Highest z-index to stay above menu */
-    position: relative;
-    background-color: color-mix(in srgb, var(--color-accent-2) 10%, transparent);
-    border-radius: 0.375rem;
-    border: 1px solid color-mix(in srgb, var(--color-accent-2) 20%, transparent);
-    transition: opacity 0.2s ease;
-}
-
-#toggle-navigation-menu:hover {
-    background-color: color-mix(in srgb, var(--color-accent-2) 20%, transparent);
-    transform: scale(1.05);
-}
-
-/* Hamburger icon sizing and toggling */
-#toggle-navigation-menu svg {
-    width: 24px;
-    height: 24px;
-    transition: opacity 0.2s ease;
-}
-
-#toggle-navigation-menu[aria-expanded="false"] svg:first-of-type { display: block; opacity: 1; }
-#toggle-navigation-menu[aria-expanded="false"] svg:last-of-type  { display: none;  opacity: 0; }
-
-#toggle-navigation-menu[aria-expanded="true"]  svg:first-of-type { display: none;  opacity: 0; }
-#toggle-navigation-menu[aria-expanded="true"]  svg:last-of-type  { display: block; opacity: 1; }
 
 /* Theme toggle styles */
 #theme-toggle {
@@ -704,12 +646,6 @@ button:focus-visible {
         z-index: 100; /* Ensure proper z-index on mobile */
     }
     
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-        overflow: hidden;
-        height: 100vh;
-    }
-    
     /* Logo and title spacing on mobile */
     #main-header .text-xl {
         font-size: 1.125rem;
@@ -720,9 +656,6 @@ button:focus-visible {
         animation: fadeInScale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .group.menu-open .mobile-nav-menu {
-        animation: fadeInScale 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
 }
 
 /* Menu animation keyframes */
@@ -739,17 +672,17 @@ button:focus-visible {
 
 /* Touch-friendly improvements */
 @media (max-width: 640px) {
-    /* Collapse grid to a simple row on mobile; keep existing overlay menu */
+    /* Collapse grid to a simple row on mobile with inline nav */
     .header-grid {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 0.75rem;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
     .header-title { display: flex; align-items: center; flex: 1; min-width: 0; }
-    .header-nav { display: block; }
+    .header-nav { display: block; width: 100%; order: 4; }
 
     /* Adjust controls spacing on mobile */
     .header-controls {
@@ -760,22 +693,14 @@ button:focus-visible {
     /* Add spacing after logo on mobile */
     .header-logo { margin-right: 0.5rem; }
 
-    /* Enlarge hamburger icon visuals on mobile */
-    #toggle-navigation-menu svg {
-        width: 24px;
-        height: 24px;
-    }
-
     /* Larger touch targets */
-    #theme-toggle,
-    #toggle-navigation-menu {
+    #theme-toggle {
         min-width: 44px;
         min-height: 44px;
         padding: 0.5rem;
     }
     
     /* Better touch feedback */
-    #toggle-navigation-menu:active,
     #theme-toggle:active {
         transform: scale(0.95);
     }
@@ -801,7 +726,6 @@ button:focus-visible {
 }
 
 /* Prevent text selection on interactive elements */
-#toggle-navigation-menu,
 #theme-toggle {
     -webkit-user-select: none;
     -moz-user-select: none;

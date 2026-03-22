@@ -48,78 +48,6 @@ class ThemeManager {
     }
 }
 
-// Mobile navigation management
-class MobileNavigation {
-    constructor() {
-        this.menuOpen = false;
-        this.init();
-    }
-
-    init() {
-        const mobileButton = document.getElementById('toggle-navigation-menu');
-        const header = document.getElementById('main-header');
-        
-        if (mobileButton && header) {
-            mobileButton.addEventListener('click', () => {
-                this.toggleMenu(header, mobileButton);
-            });
-        }
-
-        // Close menu when clicking on navigation links (mobile)
-        const navLinks = document.querySelectorAll('#navigation-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (this.menuOpen && header && mobileButton) {
-                    this.toggleMenu(header, mobileButton);
-                }
-            });
-        });
-
-        // Close menu when clicking outside (mobile)
-        document.addEventListener('click', (e) => {
-            if (this.menuOpen && 
-                !e.target.closest('#main-header') && 
-                header && mobileButton) {
-                this.toggleMenu(header, mobileButton);
-            }
-        });
-
-        // Handle touch events for better mobile interaction
-        document.addEventListener('touchstart', (e) => {
-            if (this.menuOpen && 
-                !e.target.closest('#main-header') && 
-                header && mobileButton) {
-                this.toggleMenu(header, mobileButton);
-            }
-        }, { passive: true });
-
-        // Handle escape key to close menu
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.menuOpen && header && mobileButton) {
-                this.toggleMenu(header, mobileButton);
-            }
-        });
-    }
-
-    toggleMenu(header, button) {
-        this.menuOpen = !this.menuOpen;
-        
-        if (this.menuOpen) {
-            header.classList.add('menu-open');
-            document.body.classList.add('menu-open');
-            // Prevent background scrolling on mobile
-            document.body.style.overflow = 'hidden';
-            button.setAttribute('aria-expanded', 'true');
-        } else {
-            header.classList.remove('menu-open');
-            document.body.classList.remove('menu-open');
-            // Restore background scrolling
-            document.body.style.overflow = '';
-            button.setAttribute('aria-expanded', 'false');
-        }
-    }
-}
-
 // Smooth scrolling for navigation links
 class SmoothScroll {
     constructor() {
@@ -488,7 +416,6 @@ class MarkdownLoader {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     new ThemeManager();
-    new MobileNavigation();
     new SmoothScroll();
     
     // Make NavigationHighlight available globally for smooth scroll integration
