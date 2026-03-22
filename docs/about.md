@@ -108,6 +108,24 @@
 		</article>
 
 		<article class="project-card project-card-featured">
+			<img class="project-card-media" src="https://github.com/user-attachments/assets/fd0d8fa1-119e-4244-a53c-0a435f0a5e5e" alt="FlightTracker web application UI showing live flights on an interactive map" loading="lazy">
+			<div class="project-card-body">
+				<h3>FlightTracker</h3>
+				<p class="project-summary">Web application that identifies flights overhead in real time based on your location — showing flight number, airline, speed, altitude, heading and origin country, with an interactive map and aircraft photo upload.</p>
+				<div class="project-metrics">
+					<span class="project-tag">Node.js + Express</span>
+					<span class="project-tag">Leaflet.js</span>
+					<span class="project-tag">OpenSky Network API</span>
+				</div>
+				<p class="project-notes">Live flight data with no API key required, configurable search radius of 50–300 km, auto-refresh every 30 seconds and responsive design for mobile and desktop.</p>
+				<div class="project-links">
+					<a href="https://github.com/Drivax/Flight-tracking" target="_blank" rel="noreferrer">View Repository</a>
+					<a href="https://github.com/Drivax/Flight-tracking" target="_blank" rel="noreferrer">Open Project</a>
+				</div>
+			</div>
+		</article>
+
+		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Catan/main/fine_tuning_results/best_parameters_20260320_162409.png" alt="Catan strategy optimization best parameter search visualization" loading="lazy">
 			<div class="project-card-body">
 				<h3>Catan Best Strategy Explorer</h3>

@@ -2,7 +2,7 @@
 	<div class="about-hero-copy">
 		<p class="eyebrow">Resume</p>
 		<h1 class="title">Alexandre Lalance</h1>
-		<p class="section-intro">Montrouge, France · <a href="https://www.linkedin.com/in/alexandre-lalance/" class="cactus-link" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Drivax" class="cactus-link" target="_blank" rel="noreferrer">GitHub</a> · <a href="mailto:alex.lalance@gmail.com" class="cactus-link">alex.lalance@gmail.com</a> · +33 6 51 14 24 22</p>
+		<p class="section-intro">Paris, France · <a href="https://www.linkedin.com/in/alexandre-lalance/" class="cactus-link" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Drivax" class="cactus-link" target="_blank" rel="noreferrer">GitHub</a> · <a href="mailto:alex.lalance@gmail.com" class="cactus-link">alex.lalance@gmail.com</a></p>
 		<p class="lead">Machine learning and quantitative research engineer with a strong foundation in applied mathematics, data science and model development. Interested in Generative AI, LLM systems, deep learning theory and cloud-native ML workflows.</p>
 	</div>
 </section>
