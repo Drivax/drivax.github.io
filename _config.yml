@@ -5,5 +5,5 @@ baseurl: ""
 markdown: kramdown
 permalink: pretty
 exclude:
-	- README.md
-	- .vscode/
+  - README.md
+  - .vscode/
