@@ -1,46 +1,103 @@
-Alexandre LALANCE
-Montrouge, France
-linkedin.com/in/alexandre-lalance
-https://github.com/Drivax
-alex.lalance@gmail.com — +33 6 51 14 24 22
-PROFILE
-Machine learning & quantitative research engineer with a strong foundation in applied mathematics, data science and
-machine learning model development. Passionate about Generative AI and Large Language Models (LLMs), currently
-deepening expertise in deep learning theory, prompt engineering, and AWS cloud services (Amazon SageMaker, Bedrock,
-S3). Eager to design and deploy high-ROI AI agents that transform how organisations operate.
-EXPERIENCE
-Cr´edit Agricole S.A. — Montrouge, France
-Statistical and Actuarial Research Engineer Nov 2023 – Present
-• Production from scratch of a study assessing the sensitivity of the probability of default on the regional banks’ portfolio to
-climate risk, using open-source national climatic data. Presentation of results at the plenary conference (300+ attendees).
-• Leading bi-monthly working groups of about ten people comprising business experts from different entities to develop
-group guidelines and to disseminate and present production models. Enabled regular monitoring and comprehensive
-understanding of the new models by the entities.
-• Redesigned and implemented machine learning models in Python for Basel regulatory compliance for the LGD default
-parameter. Defence of models before internal audit teams and regulators. Optimisation of SAS code, saving several hours
-of machine time per run.
-Data scientist May 2023 – Oct 2023
-• POC of a forecasting machine learning model for wheat crop yield efficiency using Python and climatic datasets. Exchanges
-with key players in the world of agricultural modelling research: research laboratories, independent researchers.
-• Use of SQL, Python, Excel and retail data for urgent response to a regulatory request for reporting on climate risk
-exposure.
-CGG — Massy-Palaiseau, France
-Research Engineer (Intern) Apr 2022 – Sep 2022
-• Internship within a research and development team dedicated to subsurface imaging, in the field of full waveform inversion.
-Implementation of a solution to the optimal transport problem, and application between simple datasets.
-EDUCATION
-Universit´e Sorbonne — Paris, France
-Master’s Degree in Statistics and Machine Learning 2022 – 2023
-Universit´e Paris-Saclay — Palaiseau, France
-Master’s Degree in Applied Mathematics 2021 – 2022
-TECHNICAL SKILLS
-Applied mathematics & AI theory: Deep learning and gen ai theory (transformers, attention mechanisms, rag, diffu-
-sion models..), empirical processes, non-parametric estimation, large-scale linear modelling, large-scale data management,
-reinforcement learning
-Cloud — AWS (in progress): Amazon SageMaker, Amazon Bedrock, Amazon S3, AWS Lambda
-LANGUAGES
-French: Native
-English: Fluent (TOEIC 965/990, June 2025)
-INTERESTS
-Scuba diving (PADI Advanced), piano (10+ years), improvisational theatre (2 years, several representations), and avid reader
-of history books and literature (mostly French / Russian).
+<section class="about-hero">
+	<div class="about-hero-copy">
+		<p class="eyebrow">Resume</p>
+		<h1 class="title">Alexandre Lalance</h1>
+		<p class="section-intro">Montrouge, France · <a href="https://www.linkedin.com/in/alexandre-lalance/" class="cactus-link" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="https://github.com/Drivax" class="cactus-link" target="_blank" rel="noreferrer">GitHub</a> · <a href="mailto:alex.lalance@gmail.com" class="cactus-link">alex.lalance@gmail.com</a> · +33 6 51 14 24 22</p>
+		<p class="lead">Machine learning and quantitative research engineer with a strong foundation in applied mathematics, data science and model development. Interested in Generative AI, LLM systems, deep learning theory and cloud-native ML workflows.</p>
+	</div>
+</section>
+
+<section class="about-section-block">
+	<h2 class="title">Experience</h2>
+	<div class="timeline">
+		<article class="timeline-item">
+			<span class="timeline-dot"></span>
+			<div class="timeline-header">
+				<span class="timeline-org">Credit Agricole S.A.</span>
+				<span class="timeline-role">Statistical and Actuarial Research Engineer</span>
+				<span class="timeline-dates">Nov 2023 - Present</span>
+			</div>
+			<div class="timeline-meta">Montrouge, France</div>
+			<div class="timeline-desc">
+				<p>Built from scratch a study measuring the sensitivity of probability of default to climate risk on regional bank portfolios, using open-source national climate data and presenting the results at a plenary conference with 300+ attendees.</p>
+				<p>Lead bi-monthly working groups with business experts across entities to define group guidelines, monitor production models and improve shared model understanding.</p>
+				<p>Redesigned machine learning models in Python for Basel regulatory compliance on LGD default parameters and optimized SAS code to save several hours of machine time per run.</p>
+			</div>
+		</article>
+
+		<article class="timeline-item">
+			<span class="timeline-dot"></span>
+			<div class="timeline-header">
+				<span class="timeline-org">Credit Agricole S.A.</span>
+				<span class="timeline-role">Data Scientist</span>
+				<span class="timeline-dates">May 2023 - Oct 2023</span>
+			</div>
+			<div class="timeline-meta">Montrouge, France</div>
+			<div class="timeline-desc">
+				<p>Delivered a proof of concept forecasting model for wheat crop yield efficiency using Python and climate datasets, in collaboration with researchers and agricultural modelling specialists.</p>
+				<p>Used SQL, Python, Excel and retail data to answer an urgent regulatory request related to climate risk exposure reporting.</p>
+			</div>
+		</article>
+
+		<article class="timeline-item">
+			<span class="timeline-dot"></span>
+			<div class="timeline-header">
+				<span class="timeline-org">CGG</span>
+				<span class="timeline-role">Research Engineer Intern</span>
+				<span class="timeline-dates">Apr 2022 - Sep 2022</span>
+			</div>
+			<div class="timeline-meta">Massy-Palaiseau, France</div>
+			<div class="timeline-desc">
+				<p>Worked in an R&amp;D team focused on subsurface imaging and full waveform inversion, implementing an optimal transport solution and testing it on simplified datasets.</p>
+			</div>
+		</article>
+	</div>
+</section>
+
+<section class="about-section-block">
+	<h2 class="title">Education</h2>
+	<div class="info-grid">
+		<article class="info-card">
+			<h3>Sorbonne Universite</h3>
+			<p>Master's Degree in Statistics and Machine Learning</p>
+			<p class="timeline-meta">Paris, France · 2022 - 2023</p>
+		</article>
+		<article class="info-card">
+			<h3>Universite Paris-Saclay</h3>
+			<p>Master's Degree in Applied Mathematics</p>
+			<p class="timeline-meta">Palaiseau, France · 2021 - 2022</p>
+		</article>
+	</div>
+</section>
+
+<section class="about-section-block">
+	<h2 class="title">Technical Skills</h2>
+	<div class="about-highlights">
+		<span class="metric-pill">Python</span>
+		<span class="metric-pill">SQL</span>
+		<span class="metric-pill">PyTorch</span>
+		<span class="metric-pill">Reinforcement learning</span>
+		<span class="metric-pill">Transformers and attention</span>
+		<span class="metric-pill">RAG and diffusion basics</span>
+		<span class="metric-pill">Large-scale linear modelling</span>
+		<span class="metric-pill">Amazon SageMaker</span>
+		<span class="metric-pill">Amazon Bedrock</span>
+		<span class="metric-pill">Amazon S3</span>
+		<span class="metric-pill">AWS Lambda</span>
+	</div>
+</section>
+
+<section class="about-section-block">
+	<h2 class="title">Languages and Interests</h2>
+	<div class="info-grid">
+		<article class="info-card">
+			<h3>Languages</h3>
+			<p>French: Native</p>
+			<p>English: Fluent, TOEIC 965/990</p>
+		</article>
+		<article class="info-card">
+			<h3>Interests</h3>
+			<p>Scuba diving, piano, improvisational theatre, history and literature.</p>
+		</article>
+	</div>
+</section>

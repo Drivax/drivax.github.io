@@ -115,7 +115,7 @@
 	<div class="contact-links">
 		<a href="mailto:alex.lalance@gmail.com">Contact</a>
 		<a href="https://www.linkedin.com/in/alexandre-lalance/" target="_blank" rel="noreferrer">LinkedIn</a>
-		<a href="./Alexandre_LALANCE_CV.pdf" target="_blank" rel="noreferrer">CV PDF</a>
+		<a href="./docs/Alexandre_LALANCE_CV.pdf" target="_blank" rel="noreferrer">CV PDF</a>
 		<a href="https://github.com/Drivax" target="_blank" rel="noreferrer">GitHub</a>
 	</div>
 </section>
