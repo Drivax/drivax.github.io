@@ -1,3 +1,9 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+title: Alexandre Lalance
+description: Machine learning, quantitative research, aerospace ML and optimization portfolio.
+url: https://drivax.github.io
+baseurl: ""
+markdown: kramdown
+permalink: pretty
+exclude:
+	- README.md
+	- .vscode/
