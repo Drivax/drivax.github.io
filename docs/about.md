@@ -72,6 +72,24 @@
 		</article>
 
 		<article class="project-card project-card-featured">
+			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Constellation-manager/main/outputs/constellation_final.png" alt="Final 3D constellation state for the Constellation Manager project" loading="lazy">
+			<div class="project-card-body">
+				<h3>Constellation Manager</h3>
+				<p class="project-summary">Multi-agent reinforcement learning baseline for managing a 100-satellite constellation with real Starlink TLE data, SGP4 orbit propagation and anomaly-aware cooperative control.</p>
+				<div class="project-metrics">
+					<span class="project-tag">MAPPO + SGP4</span>
+					<span class="project-tag">100 satellites</span>
+					<span class="project-tag">Altitude error 0.0063</span>
+				</div>
+				<p class="project-notes">Shared actor policy with centralized critic, autoencoder-based anomaly scoring, exported 3D diagnostics and a second straight-line formation experiment for spacing control.</p>
+				<div class="project-links">
+					<a href="https://github.com/Drivax/Constellation-manager" target="_blank" rel="noreferrer">View Repository</a>
+					<a href="https://github.com/Drivax/Constellation-manager#results-and-graphs" target="_blank" rel="noreferrer">Read Results</a>
+				</div>
+			</div>
+		</article>
+
+		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Satellite-anomaly-detection/main/results/model_comparison.png" alt="Satellite anomaly detection model comparison chart" loading="lazy">
 			<div class="project-card-body">
 				<h3>Satellite Telemetry Anomaly Detection</h3>
@@ -103,42 +121,6 @@
 				<div class="project-links">
 					<a href="https://github.com/Drivax/Aerospace-Supply-Chain-Optimization" target="_blank" rel="noreferrer">View Repository</a>
 					<a href="https://github.com/Drivax/Aerospace-Supply-Chain-Optimization/blob/main/notebooks/04_results.ipynb" target="_blank" rel="noreferrer">Open Notebook</a>
-				</div>
-			</div>
-		</article>
-
-		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://github.com/user-attachments/assets/fd0d8fa1-119e-4244-a53c-0a435f0a5e5e" alt="FlightTracker web application UI showing live flights on an interactive map" loading="lazy">
-			<div class="project-card-body">
-				<h3>FlightTracker</h3>
-				<p class="project-summary">Web application that identifies flights overhead in real time based on your location — showing flight number, airline, speed, altitude, heading and origin country, with an interactive map and aircraft photo upload.</p>
-				<div class="project-metrics">
-					<span class="project-tag">Node.js + Express</span>
-					<span class="project-tag">Leaflet.js</span>
-					<span class="project-tag">OpenSky Network API</span>
-				</div>
-				<p class="project-notes">Live flight data with no API key required, configurable search radius of 50–300 km, auto-refresh every 30 seconds and responsive design for mobile and desktop.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Flight-tracking" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Flight-tracking" target="_blank" rel="noreferrer">Open Project</a>
-				</div>
-			</div>
-		</article>
-
-		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Constellation-manager/main/outputs/constellation_final.png" alt="Final 3D constellation state for the Constellation Manager project" loading="lazy">
-			<div class="project-card-body">
-				<h3>Constellation Manager</h3>
-				<p class="project-summary">Multi-agent reinforcement learning baseline for managing a 100-satellite constellation with real Starlink TLE data, SGP4 orbit propagation and anomaly-aware cooperative control.</p>
-				<div class="project-metrics">
-					<span class="project-tag">MAPPO + SGP4</span>
-					<span class="project-tag">100 satellites</span>
-					<span class="project-tag">Altitude error 0.0063</span>
-				</div>
-				<p class="project-notes">Shared actor policy with centralized critic, autoencoder-based anomaly scoring, exported 3D diagnostics and a second straight-line formation experiment for spacing control.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Constellation-manager" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Constellation-manager#results-and-graphs" target="_blank" rel="noreferrer">Read Results</a>
 				</div>
 			</div>
 		</article>
