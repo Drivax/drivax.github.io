@@ -54,6 +54,24 @@
 		</article>
 
 		<article class="project-card project-card-featured">
+			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Milkomeda/main/trajectories_100.png" alt="Milkomeda trajectory visualization" loading="lazy">
+			<div class="project-card-body">
+				<h3>Milkomeda</h3>
+				<p class="project-summary">N-body gravity simulation focused on the long-term interaction between the Milky Way and Andromeda, with trajectory visualizations generated from the evolving orbital system.</p>
+				<div class="project-metrics">
+					<span class="project-tag">N-body simulation</span>
+					<span class="project-tag">Galaxy dynamics</span>
+					<span class="project-tag">Trajectory plots</span>
+				</div>
+				<p class="project-notes">Explores large-scale galactic motion through numerical simulation and visual outputs, with the repository centered on reproducing the Milkomeda merger scenario.</p>
+				<div class="project-links">
+					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">View Repository</a>
+					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">Open Project</a>
+				</div>
+			</div>
+		</article>
+
+		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Gym-lunar-lander/main/trajectories.png" alt="Trajectory visualization for Gym Lunar Lander" loading="lazy">
 			<div class="project-card-body">
 				<h3>Rocket Landing RL Simulator</h3>
@@ -143,23 +161,6 @@
 			</div>
 		</article>
 
-		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Milkomeda/main/trajectories_100.png" alt="Milkomeda trajectory visualization" loading="lazy">
-			<div class="project-card-body">
-				<h3>Milkomeda</h3>
-				<p class="project-summary">N-body gravity simulation focused on the long-term interaction between the Milky Way and Andromeda, with trajectory visualizations generated from the evolving orbital system.</p>
-				<div class="project-metrics">
-					<span class="project-tag">N-body simulation</span>
-					<span class="project-tag">Galaxy dynamics</span>
-					<span class="project-tag">Trajectory plots</span>
-				</div>
-				<p class="project-notes">Explores large-scale galactic motion through numerical simulation and visual outputs, with the repository centered on reproducing the Milkomeda merger scenario.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">Open Project</a>
-				</div>
-			</div>
-		</article>
 	</div>
 </section>
 
@@ -169,7 +170,7 @@
 	<div class="contact-links">
 		<a href="mailto:alex.lalance@gmail.com">Contact</a>
 		<a href="https://www.linkedin.com/in/alexandre-lalance/" target="_blank" rel="noreferrer">LinkedIn</a>
-		<a href="./docs/Alexandre_LALANCE_CV.pdf" target="_blank" rel="noreferrer">CV PDF</a>
+		<a href="./docs/Alexandre_LALANCE_CV__eng_.pdf" target="_blank" rel="noreferrer">CV PDF</a>
 		<a href="https://github.com/Drivax" target="_blank" rel="noreferrer">GitHub</a>
 	</div>
 </section>

@@ -7,7 +7,7 @@ Alexandre Lalance portfolio
 - `https://drivax.github.io/`
 
 
-- `docs/Alexandre_LALANCE_CV.pdf`: downloadable PDF CV
+- `docs/Alexandre_LALANCE_CV__eng_.pdf`: downloadable PDF CV
 
 
 
