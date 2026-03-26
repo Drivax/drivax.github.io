@@ -142,6 +142,24 @@
 				</div>
 			</div>
 		</article>
+
+		<article class="project-card project-card-featured">
+			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Milkomeda/main/trajectories_100.png" alt="Milkomeda trajectory visualization" loading="lazy">
+			<div class="project-card-body">
+				<h3>Milkomeda</h3>
+				<p class="project-summary">N-body gravity simulation focused on the long-term interaction between the Milky Way and Andromeda, with trajectory visualizations generated from the evolving orbital system.</p>
+				<div class="project-metrics">
+					<span class="project-tag">N-body simulation</span>
+					<span class="project-tag">Galaxy dynamics</span>
+					<span class="project-tag">Trajectory plots</span>
+				</div>
+				<p class="project-notes">Explores large-scale galactic motion through numerical simulation and visual outputs, with the repository centered on reproducing the Milkomeda merger scenario.</p>
+				<div class="project-links">
+					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">View Repository</a>
+					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">Open Project</a>
+				</div>
+			</div>
+		</article>
 	</div>
 </section>
 
