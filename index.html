@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drivax.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="./docs/styles.css?v=20260322-1">
+    <link rel="stylesheet" href="./docs/styles.css?v=20260921-1">
 </head>
 <body class="bg-global-bg text-global-text antialiased">
     <header id="main-header" class="group">
@@ -33,6 +33,7 @@
                 <div id="navigation-menu" class="mobile-nav-menu">
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
+                    <a href="#credit-limit">Credit Limit</a>
                     <a href="#resume">Resume</a>
                     <a href="#contact">Contact</a>
                 </div>
@@ -63,12 +64,57 @@
             <div id="about-content" class="prose"></div>
         </section>
 
+        <section id="credit-limit" class="mb-16 credit-feature" aria-labelledby="credit-title">
+            <p class="eyebrow">Featured research / Credit risk &amp; reinforcement learning</p>
+            <h2 id="credit-title" class="title">Dynamic Credit Limit Optimization</h2>
+            <p class="lead">Can reinforcement learning allocate credit more effectively under a shared risk budget?</p>
+            <p>I built an end-to-end research pipeline combining a longitudinal customer simulator, a calibrated probability-of-default model and PPO policies. Each monthly credit-limit decision changes future borrowing, losses and the capacity available to the rest of the portfolio.</p>
+            <div class="project-metrics" aria-label="Methods">
+                <span class="project-tag">Python / PPO + GAE</span>
+                <span class="project-tag">Calibrated credit risk</span>
+                <span class="project-tag">Constrained allocation</span>
+                <span class="project-tag">Stress testing</span>
+            </div>
+            <dl class="credit-stats">
+                <div><dt>Value gain vs Myopic</dt><dd>+€209.41<span>per initial customer · normal macro, medium budget</span></dd></div>
+                <div><dt>Evaluation scale</dt><dd>4,680<span>simulated portfolio episodes across 21 cases</span></dd></div>
+                <div><dt>Default prediction</dt><dd>0.842<span>held-out ROC-AUC · Brier score 0.162</span></dd></div>
+            </dl>
+            <h3>From risk prediction to sequential decisions</h3>
+            <p>A frozen 12-month default model feeds observable customer and portfolio features into the allocation policy. Credit-limit requests range from −20% to +20%; a shared admission layer checks expected-loss, exposure and concentration ceilings. Learned policies are compared with static, risk-based, greedy and integer-optimization baselines on matched stochastic scenarios.</p>
+            <h3>Measured results</h3>
+            <p id="credit-results-context">Normal macro, medium risk budget (€150 monthly expected-loss allowance per initial customer), up to 24 months. Main comparisons use 24 paired portfolios of 12 customers; PPO results aggregate three training seeds.</p>
+            <div class="credit-table-wrap" role="region" aria-label="Credit policy results" tabindex="0">
+                <table class="credit-table" aria-describedby="credit-results-context">
+                    <caption>Value and realized losses in EUR per initial customer. Higher value is better.</caption>
+                    <thead><tr><th scope="col">Policy</th><th scope="col">Net value (€)</th><th scope="col">Credit losses (€)</th></tr></thead>
+                    <tbody>
+                        <tr><th scope="row">Static limits</th><td>−1,251.78</td><td>2,095.15</td></tr>
+                        <tr><th scope="row">Myopic optimizer</th><td>−822.81</td><td>1,661.01</td></tr>
+                        <tr><th scope="row">Fixed −20%</th><td>−696.56</td><td>1,014.55</td></tr>
+                        <tr><th scope="row">Risk-based</th><td>−679.37</td><td>1,382.11</td></tr>
+                        <tr class="credit-result-highlight"><th scope="row">PPO + hard admission</th><td>−613.40</td><td>1,085.53</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><strong>+€209.41 per customer versus Myopic</strong>, with a paired 95% confidence interval of [+€35.89, +€396.60]. Net value includes revenue, realized credit losses and funding costs; all reported mean values remain negative in this synthetic setting.</p>
+            <aside class="credit-interpretation" aria-label="Interpretation and limitations">
+                <h3>What the evidence shows</h3>
+                <p>PPO improves mean value over Myopic in the nominal case, but its +€83.16 gain over fixed contraction is inconclusive (95% CI [−€20.04, +€235.12]). It also produces 7.06 percentage points more defaults than Myopic despite lower losses.</p>
+                <p>Under stress, PPO reaches −€1,022.9 per customer versus −€849.9 for fixed contraction. Hard admission prevents new immediate breaches or worsening inherited ones; it does not eliminate deficits caused by existing debt or changing risk. These are synthetic research results, not evidence of real-world banking performance.</p>
+            </aside>
+            <div class="project-links credit-links">
+                <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-" target="_blank" rel="noreferrer">Explore the code ↗</a>
+                <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-/blob/main/docs/portfolio_results.md" target="_blank" rel="noreferrer">Read the full results ↗</a>
+            </div>
+        </section>
+
         <section id="resume" class="mb-16">
             <h2 class="title">Resume</h2>
             <div id="resume-content" class="prose"></div>
         </section>
     </main>
 
-    <script src="./docs/script.js?v=20260322-3"></script>
+    <script src="./docs/script.js?v=20260921-1"></script>
 </body>
 </html>

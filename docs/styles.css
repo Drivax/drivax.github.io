@@ -1473,3 +1473,32 @@ html {
         font-size: 0.75rem;
     }
 }
+/* Credit research spotlight: inherits both portfolio themes. */
+.credit-feature { border-top: 2px solid var(--color-accent); padding-top: 2rem; }
+.credit-feature h3 { margin-top: 2rem; color: var(--color-accent-2); }
+.credit-project-card { grid-column: 1 / -1; border-color: var(--color-accent); }
+.credit-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 2rem 0; }
+.credit-stats > div { padding: 1.2rem; border: 1px solid var(--color-border); border-radius: 0.8rem; background: var(--color-card-bg); }
+.credit-stats dt { font-size: 0.8rem; }
+.credit-stats dd { margin: 0.65rem 0 0; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; color: var(--color-accent-2); }
+.credit-stats dd span { display: block; margin-top: 0.6rem; font-size: 0.78rem; font-weight: 400; color: var(--color-global-text); }
+.credit-table-wrap { overflow-x: auto; border: 1px solid var(--color-border); border-radius: 0.7rem; }
+.credit-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.credit-table caption { padding: 1rem; text-align: left; font-size: 0.8rem; }
+.credit-table th, .credit-table td { padding: 0.9rem 1rem; border-top: 1px solid var(--color-border); text-align: right; font-variant-numeric: tabular-nums; }
+.credit-table th:first-child { text-align: left; }
+.credit-table td { white-space: nowrap; }
+.credit-result-highlight { background: color-mix(in srgb, var(--color-accent) 12%, var(--color-global-bg)); font-weight: 700; }
+.credit-interpretation { margin: 1.5rem 0; padding: 0.25rem 1.2rem; border-left: 3px solid var(--color-accent); background: var(--color-card-bg); }
+.credit-interpretation h3 { margin-top: 1rem; }
+.credit-links { flex-wrap: wrap; }
+.credit-links a { text-decoration: none; }
+.credit-feature a:focus-visible, .credit-table-wrap:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 4px; }
+.mobile-nav-menu { flex-wrap: wrap; row-gap: 0.5rem; }
+body { padding-top: var(--header-offset, 8rem); }
+section[id] { scroll-margin-top: var(--header-offset, 8rem); }
+@media (max-width: 640px) {
+    .credit-stats { grid-template-columns: 1fr; }
+    .credit-table th, .credit-table td { padding: 0.75rem 0.6rem; }
+    .credit-links { flex-direction: column; }
+}

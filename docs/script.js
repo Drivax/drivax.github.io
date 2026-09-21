@@ -56,13 +56,12 @@ class SmoothScroll {
 
     init() {
         // Handle navigation link clicks
-        const navLinks = document.querySelectorAll('a[href^="#"]');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+        document.addEventListener('click', (e) => {
+                const link = e.target.closest('a[href^="#"]');
+                if (!link || link.getAttribute('href') === '#') return;
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                const targetElement = document.getElementById(targetId.substring(1));
                 
                 if (targetElement) {
                     // Compute dynamic offset based on actual header height
@@ -81,13 +80,12 @@ class SmoothScroll {
                     
                     window.scrollTo({
                         top: targetPosition,
-                        behavior: 'smooth'
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
                     });
                     
                     // Update URL without triggering scroll
                     history.pushState(null, null, targetId);
                 }
-            });
         });
     }
 }
@@ -231,6 +229,10 @@ class MarkdownLoader {
                     // Apply hover effect to new content
                     if (typeof window.applyBHoverEffect === 'function') {
                         window.applyBHoverEffect(contentElement);
+                    }
+                    // Restore deep links after asynchronous content changes the layout.
+                    if (window.location.hash.length > 1) {
+                        document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' });
                     }
                     console.log(`Successfully loaded ${section} from: ${fullPath}`);
                     return; // Success, exit early
@@ -415,6 +417,12 @@ class MarkdownLoader {
 // Initialize all functionality when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
+    const header = document.getElementById('main-header');
+    if (header && 'ResizeObserver' in window) {
+        new ResizeObserver(() => {
+            document.documentElement.style.setProperty('--header-offset', `${Math.ceil(header.getBoundingClientRect().height) + 16}px`);
+        }).observe(header);
+    }
     new ThemeManager();
     new SmoothScroll();
     

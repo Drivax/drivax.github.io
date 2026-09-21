@@ -33,8 +33,26 @@
 
 <section id="projects" class="about-section-block">
 	<h2 class="title">Featured Projects</h2>
-	<p class="section-intro">A selection of ML, optimization and fun side projects built around aerospace, board games or basically anything fun to explore. Each card links to the repository and the main notebook used to explore results.</p>
+	<p class="section-intro">A selection of machine learning and optimization projects spanning credit risk, aerospace and simulation. Explore the code, methods and measured results.</p>
 	<div class="project-grid project-grid-featured">
+        <article class="project-card project-card-featured credit-project-card">
+            <div class="project-card-body">
+                <p class="eyebrow">Credit risk / Reinforcement learning</p>
+                <h3>Dynamic Credit Limit Optimization</h3>
+                <p class="project-summary">An end-to-end framework for sequential credit allocation: calibrated default prediction, shared portfolio risk constraints and PPO evaluated against observable allocation baselines.</p>
+                <div class="project-metrics">
+                    <span class="project-tag">+€209.41/client vs Myopic</span>
+                    <span class="project-tag">4,680 simulated episodes</span>
+                    <span class="project-tag">PD AUC 0.842</span>
+                </div>
+                <p class="project-notes">Normal macro, medium budget: paired 95% CI [+€35.89, +€396.60]. Synthetic results; no established advantage over fixed contraction. Read the summary and comparison directly below.</p>
+                <div class="project-links">
+                    <a href="#credit-limit">Summary &amp; Results ↓</a>
+                    <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-" target="_blank" rel="noreferrer">View Repository ↗</a>
+                </div>
+            </div>
+        </article>
+
 		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Constellation-manager/main/outputs/constellation_initial.png" alt="Initial 3D constellation state for the Constellation Manager project" loading="lazy">
 			<div class="project-card-body">
