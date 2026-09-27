@@ -39,13 +39,13 @@
             <div class="project-card-body">
                 <p class="eyebrow">Credit risk / Reinforcement learning</p>
                 <h3>Dynamic Credit Limit Optimization</h3>
-                <p class="project-summary">An end-to-end framework for sequential credit allocation: calibrated default prediction, shared portfolio risk constraints and PPO evaluated against observable allocation baselines.</p>
+                <p class="project-summary">A reproducible study of monthly credit-limit decisions combining calibrated default prediction, a synthetic customer simulator and PPO evaluated against rules and an economic baseline.</p>
                 <div class="project-metrics">
-                    <span class="project-tag">+€209.41/client vs Myopic</span>
-                    <span class="project-tag">4,680 simulated episodes</span>
+                    <span class="project-tag">+€505.82/client vs MyopicEconomic</span>
+                    <span class="project-tag">300 held-out customers / 3 PPO seeds</span>
                     <span class="project-tag">PD AUC 0.842</span>
                 </div>
-                <p class="project-notes">Normal macro, medium budget: paired 95% CI [+€35.89, +€396.60]. Synthetic results; no established advantage over fixed contraction. Read the summary and comparison directly below.</p>
+                <p class="project-notes">Baseline gain: 95% CI [€282.94, €706.40]; stress gain: +€1,149.72/client. PPO matches constant −20% contraction on the evaluation panel. Synthetic results, with higher default incidence than MyopicEconomic despite lower losses.</p>
                 <div class="project-links">
                     <a href="#credit-limit">Summary &amp; Results ↓</a>
                     <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-" target="_blank" rel="noreferrer">View Repository ↗</a>

@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drivax.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="./docs/styles.css?v=20260921-1">
+    <link rel="stylesheet" href="./docs/styles.css?v=20260927-1">
 </head>
 <body class="bg-global-bg text-global-text antialiased">
     <header id="main-header" class="group">
@@ -67,45 +67,60 @@
         <section id="credit-limit" class="mb-16 credit-feature" aria-labelledby="credit-title">
             <p class="eyebrow">Featured research / Credit risk &amp; reinforcement learning</p>
             <h2 id="credit-title" class="title">Dynamic Credit Limit Optimization</h2>
-            <p class="lead">Can reinforcement learning allocate credit more effectively under a shared risk budget?</p>
-            <p>I built an end-to-end research pipeline combining a longitudinal customer simulator, a calibrated probability-of-default model and PPO policies. Each monthly credit-limit decision changes future borrowing, losses and the capacity available to the rest of the portfolio.</p>
+            <p class="lead">What does reinforcement learning actually learn when optimizing repeated credit-limit decisions?</p>
+            <p>I built a reproducible research pipeline combining a synthetic longitudinal customer simulator, calibrated default prediction and PPO. Monthly limit changes affect payment incentives, purchasing capacity, future balances and default exposure. The study compares learned policies with transparent rules and an economic baseline, including a constant-contraction control to test whether learning adds value.</p>
             <div class="project-metrics" aria-label="Methods">
                 <span class="project-tag">Python / PPO + GAE</span>
-                <span class="project-tag">Calibrated credit risk</span>
-                <span class="project-tag">Constrained allocation</span>
+                <span class="project-tag">Calibrated default prediction</span>
+                <span class="project-tag">Paired evaluation</span>
                 <span class="project-tag">Stress testing</span>
             </div>
             <dl class="credit-stats">
-                <div><dt>Value gain vs Myopic</dt><dd>+€209.41<span>per initial customer · normal macro, medium budget</span></dd></div>
-                <div><dt>Evaluation scale</dt><dd>4,680<span>simulated portfolio episodes across 21 cases</span></dd></div>
-                <div><dt>Default prediction</dt><dd>0.842<span>held-out ROC-AUC · Brier score 0.162</span></dd></div>
+                <div><dt>Baseline gain vs MyopicEconomic</dt><dd>+€505.82<span>per initial customer · 95% CI [€282.94, €706.40]</span></dd></div>
+                <div><dt>Stress gain vs MyopicEconomic</dt><dd>+€1,149.72<span>per initial customer · 95% CI [€994.17, €1,294.82]</span></dd></div>
+                <div><dt>Held-out evaluation</dt><dd>300<span>customers · 3 PPO seeds · 2 macro scenarios</span></dd></div>
             </dl>
             <h3>From risk prediction to sequential decisions</h3>
-            <p>A frozen 12-month default model feeds observable customer and portfolio features into the allocation policy. Credit-limit requests range from −20% to +20%; a shared admission layer checks expected-loss, exposure and concentration ceilings. Learned policies are compared with static, risk-based, greedy and integer-optimization baselines on matched stochastic scenarios.</p>
-            <h3>Measured results</h3>
-            <p id="credit-results-context">Normal macro, medium risk budget (€150 monthly expected-loss allowance per initial customer), up to 24 months. Main comparisons use 24 paired portfolios of 12 customers; PPO results aggregate three training seeds.</p>
-            <div class="credit-table-wrap" role="region" aria-label="Credit policy results" tabindex="0">
+            <p>A frozen, calibrated logistic model estimates 12-month default probability from observable histories (test ROC-AUC 0.842; Brier score 0.162). PPO observes 21 customer and macro features and chooses monthly limit changes from −20%, −10%, unchanged, +10% or +20%. Limits stay within €500–€15,000; three consecutive delinquent months block increases. Hidden customer traits and future shocks are never policy inputs.</p>
+            <h3>Reproducible experimental design</h3>
+            <p id="credit-results-context">The canonical experiment follows 300 held-out customers for up to 24 months, with absorbing default. All policies share initial customers and indexed exogenous shocks. Each of three PPO seeds trains for 32,768 transitions, with checkpoints selected on a separate validation population. Baseline macro is normal throughout; severe stress applies in months 4–19 at severity 1.6. Confidence intervals use 300 crossed bootstrap resamples of customers and PPO seeds.</p>
+            <h3>Baseline results</h3>
+            <div class="credit-table-wrap" role="region" aria-label="Baseline results policy results" tabindex="0">
                 <table class="credit-table" aria-describedby="credit-results-context">
-                    <caption>Value and realized losses in EUR per initial customer. Higher value is better.</caption>
-                    <thead><tr><th scope="col">Policy</th><th scope="col">Net value (€)</th><th scope="col">Credit losses (€)</th></tr></thead>
-                    <tbody>
-                        <tr><th scope="row">Static limits</th><td>−1,251.78</td><td>2,095.15</td></tr>
-                        <tr><th scope="row">Myopic optimizer</th><td>−822.81</td><td>1,661.01</td></tr>
-                        <tr><th scope="row">Fixed −20%</th><td>−696.56</td><td>1,014.55</td></tr>
-                        <tr><th scope="row">Risk-based</th><td>−679.37</td><td>1,382.11</td></tr>
-                        <tr class="credit-result-highlight"><th scope="row">PPO + hard admission</th><td>−613.40</td><td>1,085.53</td></tr>
-                    </tbody>
+                    <caption>Baseline results: money in EUR per initial customer; defaults as a share of initial customers.</caption>
+                    <thead><tr><th scope="col">Policy</th><th scope="col">Net value (€)</th><th scope="col">Credit losses (€)</th><th scope="col">Defaults</th></tr></thead>
+                    <tbody><tr><th scope="row">Static</th><td>−1,379.34</td><td>2,237.26</td><td>64.00%</td></tr>
+<tr><th scope="row">MyopicEconomic</th><td>−1,285.25</td><td>2,191.30</td><td>57.00%</td></tr>
+<tr><th scope="row">PDThreshold</th><td>−880.47</td><td>1,614.30</td><td>63.00%</td></tr>
+<tr><th scope="row">AlwaysDecrease20</th><td>−779.43</td><td>1,105.89</td><td>71.33%</td></tr>
+<tr class="credit-result-highlight"><th scope="row">PPO</th><td>−779.43</td><td>1,105.89</td><td>71.33%</td></tr>
+</tbody>
                 </table>
             </div>
-            <p><strong>+€209.41 per customer versus Myopic</strong>, with a paired 95% confidence interval of [+€35.89, +€396.60]. Net value includes revenue, realized credit losses and funding costs; all reported mean values remain negative in this synthetic setting.</p>
+            <p>PPO improves mean net value over Static by <strong>€599.91 per customer</strong> and over MyopicEconomic by <strong>€505.82</strong>. Net economic value is revenue minus credit losses and funding costs; it excludes the soft capital/risk charges used in the training reward.</p>
+            <h3>Severe-stress results</h3>
+            <div class="credit-table-wrap" role="region" aria-label="Severe-stress results policy results" tabindex="0">
+                <table class="credit-table" aria-describedby="credit-results-context">
+                    <caption>Severe-stress results: money in EUR per initial customer; defaults as a share of initial customers.</caption>
+                    <thead><tr><th scope="col">Policy</th><th scope="col">Net value (€)</th><th scope="col">Credit losses (€)</th><th scope="col">Defaults</th></tr></thead>
+                    <tbody><tr><th scope="row">Static</th><td>−2,494.23</td><td>2,940.48</td><td>91.33%</td></tr>
+<tr><th scope="row">MyopicEconomic</th><td>−2,430.56</td><td>2,926.82</td><td>87.33%</td></tr>
+<tr><th scope="row">PDThreshold</th><td>−1,953.06</td><td>2,350.71</td><td>91.67%</td></tr>
+<tr><th scope="row">AlwaysDecrease20</th><td>−1,280.84</td><td>1,532.20</td><td>95.33%</td></tr>
+<tr class="credit-result-highlight"><th scope="row">PPO</th><td>−1,280.84</td><td>1,532.20</td><td>95.33%</td></tr>
+</tbody>
+                </table>
+            </div>
+            <p>Under stress, PPO improves mean net value over Static by <strong>€1,213.39 per customer</strong> and over MyopicEconomic by <strong>€1,149.72</strong>. All policies still have negative mean net economic value in both scenarios.</p>
             <aside class="credit-interpretation" aria-label="Interpretation and limitations">
-                <h3>What the evidence shows</h3>
-                <p>PPO improves mean value over Myopic in the nominal case, but its +€83.16 gain over fixed contraction is inconclusive (95% CI [−€20.04, +€235.12]). It also produces 7.06 percentage points more defaults than Myopic despite lower losses.</p>
-                <p>Under stress, PPO reaches −€1,022.9 per customer versus −€849.9 for fixed contraction. Hard admission prevents new immediate breaches or worsening inherited ones; it does not eliminate deficits caused by existing debt or changing risk. These are synthetic research results, not evidence of real-world banking performance.</p>
+                <h3>Key finding: contraction, not demonstrated learned planning</h3>
+                <p>Every PPO seed reproduces the effective trajectories of AlwaysDecrease20 to numerical precision on this evaluation panel. The experiment supports exposure contraction under the specified objective, but demonstrates no advantage over the constant −20% rule.</p>
+                <p>Lower monetary losses do not imply fewer defaults: PPO default incidence exceeds MyopicEconomic by 14.33 percentage points at baseline and 8.00 points under stress. Neither terminal receivables nor customer welfare are valued. The simulator is fully synthetic and is not calibrated to a real bank; these results do not establish deployment performance.</p>
             </aside>
+            <p><strong>Study scope:</strong> portfolio allocation, robustness and off-policy evaluation are supplementary studies with different protocols. Their figures are kept separate from the individual-customer results shown here.</p>
             <div class="project-links credit-links">
                 <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-" target="_blank" rel="noreferrer">Explore the code ↗</a>
-                <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-/blob/main/docs/portfolio_results.md" target="_blank" rel="noreferrer">Read the full results ↗</a>
+                <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-/blob/main/docs/technical_paper.md" target="_blank" rel="noreferrer">Read the technical paper ↗</a>
             </div>
         </section>
 
