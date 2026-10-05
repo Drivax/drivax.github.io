@@ -38,13 +38,13 @@
             <div class="project-card-body">
                 <p class="eyebrow">Credit risk / Reinforcement learning</p>
                 <h3>Dynamic Credit Limit Optimization</h3>
-                <p class="project-summary">A reproducible study of monthly credit-limit decisions combining calibrated default prediction, a synthetic customer simulator and PPO evaluated against rules and an economic baseline.</p>
+                <p class="project-summary">A synthetic sequential-decision study showing how observable-state behavior-cloning initialization changes PPO learning and recovers state-dependent credit-limit control.</p>
                 <div class="project-metrics">
-                    <span class="project-tag">+€505.82/client vs MyopicEconomic</span>
-                    <span class="project-tag">300 held-out customers / 3 PPO seeds</span>
-                    <span class="project-tag">PD AUC 0.842</span>
+                    <span class="project-tag">PPO / behavior cloning / OPE</span>
+                    <span class="project-tag">150 customers / 5 seeds / 5 worlds</span>
+                    <span class="project-tag">+€200.8 synthetic NEV/customer vs contraction</span>
                 </div>
-                <p class="project-notes">Baseline gain: 95% CI [€282.94, €706.40]; stress gain: +€1,149.72/client. PPO matches constant −20% contraction on the evaluation panel. Synthetic results, with higher default incidence than MyopicEconomic despite lower losses.</p>
+                <p class="project-notes">BCRegularizedPPO vs AlwaysDecrease20 at 32,768 steps: nominal gain +€200.8 (95% CI [€120.7, €293.0]); severe stress +€61.1 (95% CI [€32.8, €96.7]). Benefits are objective- and scenario-dependent; extra BC regularization does not establish a NEV gain over initialization alone.</p>
                 <div class="project-links">
                     <a href="#credit-limit">Summary &amp; Results ↓</a>
                     <a href="https://github.com/Drivax/Dynamic-Credit-Limit-Optimization-with-RL-" target="_blank" rel="noreferrer">View Repository ↗</a>
