@@ -1502,3 +1502,14 @@ section[id] { scroll-margin-top: var(--header-offset, 8rem); }
     .credit-table th, .credit-table td { padding: 0.75rem 0.6rem; }
     .credit-links { flex-direction: column; }
 }
+
+/* Measured research figures: preserve axes and labels at every viewport width. */
+.project-card-media.project-chart { height: auto; aspect-ratio: auto; object-fit: contain; background: #fff; }
+.project-figure-link { display: block; }
+.research-gallery { display: grid; gap: 1.5rem; margin: 2rem 0; }
+.research-figure { margin: 0; overflow: hidden; border: 1px solid var(--color-border); border-radius: 0.8rem; background: var(--color-card-bg); }
+.research-figure a { display: block; background: #fff; }
+.research-figure img { display: block; width: 100%; height: auto; }
+.research-figure figcaption { padding: 1rem 1.2rem; font-size: 0.9rem; line-height: 1.6; }
+.research-figure figcaption strong { display: block; margin-bottom: 0.35rem; color: var(--color-accent-2); }
+.project-figure-link:focus-visible, .research-figure a:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -3px; }

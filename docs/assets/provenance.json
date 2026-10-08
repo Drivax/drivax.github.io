@@ -1,0 +1,18 @@
+{
+  "satellite-opssat-performance.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Satellite-anomaly-detection\\outputs\\opssat\\figures\\performance.png",
+    "sha256": "d020b255d3bd9565f2f80286978fc28f1e3ecc879640801bf9dd0ee01876f217"
+  },
+  "credit-ppo-collapse.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Dynamic-Credit-Limit-Optimization-with-RL-\\outputs\\main\\final\\figures\\03_canonical_collapse.png",
+    "sha256": "21b39701dd3f2487d06a179606764ddff679ad2fbd87b7944a9630c917671ccb"
+  },
+  "credit-economic-risk.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Dynamic-Credit-Limit-Optimization-with-RL-\\outputs\\main\\final\\figures\\06_economic_risk.png",
+    "sha256": "bd94ab577370f8fccedff29e367ae8cf6fad5ed39ebcb3114274d84e1332d71f"
+  },
+  "credit-world-robustness.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Dynamic-Credit-Limit-Optimization-with-RL-\\outputs\\main\\final\\figures\\08_world_robustness.png",
+    "sha256": "760e2203cbe4dd620d5b0a7eaa833664222d719e8a2bd23b1d232f2ce721ffb1"
+  }
+}

@@ -125,23 +125,25 @@
 			</div>
 		</article>
 
-		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Satellite-anomaly-detection/main/results/model_comparison.png" alt="Satellite anomaly detection model comparison chart" loading="lazy">
-			<div class="project-card-body">
-				<h3>Satellite Telemetry Anomaly Detection</h3>
-				<p class="project-summary">Unsupervised anomaly detection for satellite telemetry using Isolation Forest and a PyTorch autoencoder on OPSSAT-like multivariate time series. The system targets early fault detection before degradation becomes operationally critical.</p>
-				<div class="project-metrics">
-					<span class="project-tag">PyTorch + Isolation Forest</span>
-					<span class="project-tag">120k points</span>
-					<span class="project-tag">AUC 0.8207</span>
-				</div>
-				<p class="project-notes">Chronological split, rolling statistics, orbital context features, weighted reconstruction loss and Streamlit dashboard for operational monitoring.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Satellite-anomaly-detection" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Satellite-anomaly-detection/blob/main/notebooks/05_results.ipynb" target="_blank" rel="noreferrer">Open Notebook</a>
-				</div>
-			</div>
-		</article>
+		<article class="project-card project-card-featured" id="satellite-anomalies">
+            <a class="project-figure-link" href="./docs/assets/satellite-opssat-performance.png" target="_blank" rel="noreferrer" aria-label="View OPS-SAT benchmark figure at full size">
+                <img class="project-card-media project-chart" src="./docs/assets/satellite-opssat-performance.png" alt="OPS-SAT results: official and chronological evaluation of Autoencoder, Isolation Forest and Robust Distance, with recall and false-positive rates" loading="lazy" width="1667" height="1017">
+            </a>
+            <div class="project-card-body">
+                <h3>Satellite Telemetry Anomaly Detection</h3>
+                <p class="project-summary">An offline anomaly-detection benchmark on real ESA OPS-SAT telemetry. Robust Distance, Isolation Forest and a PyTorch autoencoder are compared using separate normal-data calibration, the official test split and a chronological generalization test.</p>
+                <div class="project-metrics">
+                    <span class="project-tag">2,123 real segments / 9 channels</span>
+                    <span class="project-tag">3 models / 5 seeds</span>
+                    <span class="project-tag">97 tests passed</span>
+                </div>
+                <p class="project-notes">On the official test with all 19 descriptors, Robust Distance achieves average precision 0.829 versus 0.759 for the autoencoder. False-positive rates rise sharply on the chronological test. Reproducible pipelines, uncertainty estimates and a dashboard support review of complete annotated segments; these results do not establish early warning or operational readiness.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Drivax/Satellite-anomaly-detection" target="_blank" rel="noreferrer">View Repository</a>
+                    <a href="./docs/assets/satellite-opssat-performance.png" target="_blank" rel="noreferrer">View Measured Results</a>
+                </div>
+            </div>
+        </article>
 
 		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Aerospace-Supply-Chain-Optimization/main/results/optimized_network.png" alt="Aerospace supply chain optimization network preview" loading="lazy">

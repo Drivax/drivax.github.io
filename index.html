@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drivax.github.io/">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="./docs/styles.css?v=20260927-1">
+    <link rel="stylesheet" href="./docs/styles.css?v=20261008-1">
 </head>
 <body class="bg-global-bg text-global-text antialiased">
     <header id="main-header" class="group">
@@ -101,6 +101,11 @@
                 </table>
             </div>
             <p>BCRegularizedPPO improves NEV over contraction across the five declared worlds. Its worst-world gain is <strong>+€61.1 per customer</strong> (paired 95% CI [€32.3, €97.4]); this interval recomputes the worst world within each bootstrap replicate. All absolute NEV values remain negative.</p>
+<div class="research-gallery" aria-label="Credit limit research figures">
+<figure class="research-figure"><a href="./docs/assets/credit-ppo-collapse.png" target="_blank" rel="noreferrer" aria-label="Open Why canonical PPO needed a closer look figure at full size"><img src="./docs/assets/credit-ppo-collapse.png" width="1350" height="450" alt="Why canonical PPO needed a closer look. Canonical PPO converges toward maximum contraction in both nominal and severe-stress evaluation. Shaded bands show the range across training seeds, not confidence intervals." loading="lazy"></a><figcaption><strong>Why canonical PPO needed a closer look</strong> Canonical PPO converges toward maximum contraction in both nominal and severe-stress evaluation. Shaded bands show the range across training seeds, not confidence intervals.</figcaption></figure>
+<figure class="research-figure"><a href="./docs/assets/credit-economic-risk.png" target="_blank" rel="noreferrer" aria-label="Open Economic value and realized losses figure at full size"><img src="./docs/assets/credit-economic-risk.png" width="1500" height="600" alt="Economic value and realized losses. Final primary-budget comparison in synthetic EUR per initial customer. Initialized policies improve the tradeoff over constant contraction, while all absolute net economic values remain negative." loading="lazy"></a><figcaption><strong>Economic value and realized losses</strong> Final primary-budget comparison in synthetic EUR per initial customer. Initialized policies improve the tradeoff over constant contraction, while all absolute net economic values remain negative.</figcaption></figure>
+<figure class="research-figure"><a href="./docs/assets/credit-world-robustness.png" target="_blank" rel="noreferrer" aria-label="Open Does the gain survive a change of world? figure at full size"><img src="./docs/assets/credit-world-robustness.png" width="1350" height="600" alt="Does the gain survive a change of world?. Incremental net economic value relative to AlwaysDecrease20 across five declared synthetic worlds, at 32,768 training steps. Initialization delivers gains; additional BC regularization does not establish a gain over initialization alone." loading="lazy"></a><figcaption><strong>Does the gain survive a change of world?</strong> Incremental net economic value relative to AlwaysDecrease20 across five declared synthetic worlds, at 32,768 training steps. Initialization delivers gains; additional BC regularization does not establish a gain over initialization alone.</figcaption></figure>
+</div>
             <aside class="credit-interpretation" aria-label="Interpretation and limitations">
                 <h3>Learned complexity is conditionally valuable</h3>
                 <p>Observable-state initialization improves synthetic NEV relative to contraction, but reward superiority is not universal. <strong>Additional BC regularization does not establish an incremental NEV gain over initialization alone.</strong> NEV is undiscounted income minus realized credit losses and funding costs; it excludes the modeled capital and risk charges included in PPO's discounted reward.</p>
