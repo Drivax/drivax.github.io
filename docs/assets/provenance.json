@@ -14,5 +14,17 @@
   "credit-world-robustness.png": {
     "source": "C:\\Users\\Alexandre\\Documents\\code\\Dynamic-Credit-Limit-Optimization-with-RL-\\outputs\\main\\final\\figures\\08_world_robustness.png",
     "sha256": "760e2203cbe4dd620d5b0a7eaa833664222d719e8a2bd23b1d232f2ce721ffb1"
+  },
+  "constellation-spacing.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Constellation-manager\\outputs\\figures\\02_spacing_through_time.png",
+    "sha256": "1be3ee2b9e95690748b20a529bc8fc546f1f9f786f11df410930176648a60cc3"
+  },
+  "milkomeda-uncertainty.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Milkomeda\\results\\figures\\09_uncertainty.png",
+    "sha256": "aab6f94d1c7c0b3d804e2c27a21ccf1e2a3e40fe1f288b01f1ed454f4413bb52"
+  },
+  "orbital-error-horizon.png": {
+    "source": "C:\\Users\\Alexandre\\Documents\\code\\Orbital-trajectory-predictor\\results\\figures\\01_error_vs_horizon.png",
+    "sha256": "2ce5a1f732e10705b0eb602c88c1903eb2f23be03a134e23a2d5de15c5f6573c"
   }
 }

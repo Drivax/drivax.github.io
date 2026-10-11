@@ -53,40 +53,44 @@
         </article>
 
 		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Constellation-manager/main/outputs/constellation_initial.png" alt="Initial 3D constellation state for the Constellation Manager project" loading="lazy">
-			<div class="project-card-body">
-				<h3>Constellation Manager</h3>
-				<p class="project-summary">Multi-agent reinforcement learning baseline for managing a 100-satellite constellation with real Starlink TLE data, SGP4 orbit propagation and anomaly-aware cooperative control.</p>
-				<div class="project-metrics">
-					<span class="project-tag">MAPPO + SGP4</span>
-					<span class="project-tag">100 satellites</span>
-					<span class="project-tag">Altitude error 0.0063</span>
-				</div>
-				<p class="project-notes">Shared actor policy with centralized critic, autoencoder-based anomaly scoring, exported 3D diagnostics and a second straight-line formation experiment for spacing control.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Constellation-manager" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Constellation-manager#results-and-graphs" target="_blank" rel="noreferrer">Read Results</a>
-				</div>
-			</div>
-		</article>
+            <a class="project-figure-link" href="./docs/assets/constellation-spacing.png" target="_blank" rel="noreferrer" aria-label="View Constellation Manager figure at full size">
+                <img class="project-card-media project-chart" src="./docs/assets/constellation-spacing.png" alt="Spacing error over eight hours: classical PD reduces error while MAPPO remains close to no control." loading="lazy" width="1492" height="948">
+            </a>
+            <div class="project-card-body">
+                <h3>Constellation Manager</h3>
+                <p class="project-summary">Satellite spacing control with physically coupled tangential impulses and a limited delta-v budget. A shared-actor MAPPO policy is compared with no control, proportional feedback and classical PD in a simplified orbital model.</p>
+                <div class="project-metrics">
+                    <span class="project-tag">P / PD / MAPPO</span>
+                    <span class="project-tag">3 training seeds / 5 scenarios</span>
+                    <span class="project-tag">100 and 1,000 satellites</span>
+                </div>
+                <p class="project-notes">At 100 satellites, PD achieves 2.02% mean spacing error and 100% nominal success versus 5.56% and 0% for MAPPO. MAPPO does not improve on PD under this budget; its error grows to 25.88% at 1,000 satellites without retraining.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Drivax/Constellation-manager" target="_blank" rel="noreferrer">View Repository</a>
+                    <a href="./docs/assets/constellation-spacing.png" target="_blank" rel="noreferrer">View Measured Results</a>
+                </div>
+            </div>
+        </article>
 
 		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Milkomeda/main/trajectories_100.png" alt="Milkomeda trajectory visualization" loading="lazy">
-			<div class="project-card-body">
-				<h3>Milkomeda</h3>
-				<p class="project-summary">N-body gravity simulation focused on the long-term interaction between the Milky Way and Andromeda, with trajectory visualizations generated from the evolving orbital system.</p>
-				<div class="project-metrics">
-					<span class="project-tag">N-body simulation</span>
-					<span class="project-tag">Galaxy dynamics</span>
-					<span class="project-tag">Trajectory plots</span>
-				</div>
-				<p class="project-notes">Explores large-scale galactic motion through numerical simulation and visual outputs, with the repository centered on reproducing the Milkomeda merger scenario.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">Open Project</a>
-				</div>
-			</div>
-		</article>
+            <a class="project-figure-link" href="./docs/assets/milkomeda-uncertainty.png" target="_blank" rel="noreferrer" aria-label="View Milkomeda figure at full size">
+                <img class="project-card-media project-chart" src="./docs/assets/milkomeda-uncertainty.png" alt="Twenty simulated galaxy-center trajectories, separation percentile bands and distributions of closest approach under illustrative uncertainty." loading="lazy" width="1960" height="1420">
+            </a>
+            <div class="project-card-body">
+                <h3>Milkomeda</h3>
+                <p class="project-summary">An interactive, reproducible N-body study of the Milky Way–Andromeda interaction. Configure masses, velocities, timestep and softening, run scenarios in Streamlit, and compare their trajectories and numerical conservation.</p>
+                <div class="project-metrics">
+                    <span class="project-tag">Configurable N-body / Streamlit</span>
+                    <span class="project-tag">25 sensitivity runs / 20 Monte Carlo</span>
+                    <span class="project-tag">Energy / momentum / COM checks</span>
+                </div>
+                <p class="project-notes">Explicitly configured toy uncertainty produces a range of future trajectories. Particle count, initial sampling and numerical choices materially change the encounter: good energy conservation is not proof of physical convergence, and this is not a certain collision forecast.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Drivax/Milkomeda" target="_blank" rel="noreferrer">View Repository</a>
+                    <a href="./docs/assets/milkomeda-uncertainty.png" target="_blank" rel="noreferrer">View Measured Results</a>
+                </div>
+            </div>
+        </article>
 
 		<article class="project-card project-card-featured">
 			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Gym-lunar-lander/main/trajectories.png" alt="Trajectory visualization for Gym Lunar Lander" loading="lazy">
@@ -107,22 +111,24 @@
 		</article>
 
 		<article class="project-card project-card-featured">
-			<img class="project-card-media" src="https://raw.githubusercontent.com/Drivax/Orbital-trajectory-predictor/main/results/trajectory_3d_snapshot.png" alt="3D orbital trajectory prediction preview" loading="lazy">
-			<div class="project-card-body">
-				<h3>Orbital Trajectory Prediction</h3>
-				<p class="project-summary">LSTM with temporal attention trained on real TLE data and SGP4-generated trajectories to predict 5-minute orbital displacement. The pipeline combines orbital physics, feature engineering and recurrent learning.</p>
-				<div class="project-metrics">
-					<span class="project-tag">LSTM + Attention</span>
-					<span class="project-tag">31 satellites</span>
-					<span class="project-tag">RMSE 41.9 km</span>
-				</div>
-				<p class="project-notes">21-dimensional physics-informed features, chronological per-satellite split, residual skip connection and conjunction-aware visual analytics.</p>
-				<div class="project-links">
-					<a href="https://github.com/Drivax/Orbital-trajectory-predictor" target="_blank" rel="noreferrer">View Repository</a>
-					<a href="https://github.com/Drivax/Orbital-trajectory-predictor/blob/main/notebooks/04_results.ipynb" target="_blank" rel="noreferrer">Open Notebook</a>
-				</div>
-			</div>
-		</article>
+            <a class="project-figure-link" href="./docs/assets/orbital-error-horizon.png" target="_blank" rel="noreferrer" aria-label="View Orbital Trajectory Prediction figure at full size">
+                <img class="project-card-media project-chart" src="./docs/assets/orbital-error-horizon.png" alt="Position prediction error across five forecast horizons comparing constant velocity, two-body gravity, J2, pure ML and hybrid residual learning." loading="lazy" width="1544" height="965">
+            </a>
+            <div class="project-card-body">
+                <h3>Orbital Trajectory Prediction</h3>
+                <p class="project-summary">A controlled synthetic benchmark comparing physics, pure ML and physics-plus-ML residual orbital prediction. Disjoint satellite populations test five forecast horizons from 5 minutes to 6 hours and shifts in altitude, inclination and eccentricity.</p>
+                <div class="project-metrics">
+                    <span class="project-tag">Two Body / J2 / residual MLP</span>
+                    <span class="project-tag">3 training seeds / held-out satellites</span>
+                    <span class="project-tag">5 horizons / ID and OOD</span>
+                </div>
+                <p class="project-notes">At 6 hours in distribution, the hybrid reduces two-body mean error from 185 km to 3.73 km; the J2 baseline is best at 0.144 km. Under distribution shift, hybrid error rises to 360 km versus 202 km for two-body physics. These are simulation results, not operational orbit predictions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Drivax/Orbital-trajectory-predictor" target="_blank" rel="noreferrer">View Repository</a>
+                    <a href="./docs/assets/orbital-error-horizon.png" target="_blank" rel="noreferrer">View Measured Results</a>
+                </div>
+            </div>
+        </article>
 
 		<article class="project-card project-card-featured" id="satellite-anomalies">
             <a class="project-figure-link" href="./docs/assets/satellite-opssat-performance.png" target="_blank" rel="noreferrer" aria-label="View OPS-SAT benchmark figure at full size">
