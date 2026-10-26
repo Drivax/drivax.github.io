@@ -189,14 +189,3 @@
 
 	</div>
 </section>
-
-<section id="contact" class="about-section-block">
-	<h2 class="title">Contact</h2>
-	<p class="section-intro">If you want to discuss machine learning, quantitative modelling, optimization or AI product opportunities, the fastest way is by email or LinkedIn.</p>
-	<div class="contact-links">
-		<a href="mailto:alex.lalance@gmail.com">Contact</a>
-		<a href="https://www.linkedin.com/in/alexandre-lalance/" target="_blank" rel="noreferrer">LinkedIn</a>
-		<a href="./docs/Alexandre_LALANCE_CV__eng_.pdf" target="_blank" rel="noreferrer">CV PDF</a>
-		<a href="https://github.com/Drivax" target="_blank" rel="noreferrer">GitHub</a>
-	</div>
-</section>

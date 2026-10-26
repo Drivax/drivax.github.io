@@ -1,7 +1,7 @@
 // Theme management
 class ThemeManager {
     constructor() {
-        this.theme = localStorage.getItem('theme') || 'light';
+        this.theme = document.documentElement.dataset.theme || 'light';
         this.init();
     }
 
@@ -19,11 +19,12 @@ class ThemeManager {
     setTheme(theme) {
         this.theme = theme;
         document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
+        try { localStorage.setItem('theme', theme); } catch (_) { /* Optional persistence. */ }
         
         // Update theme toggle button aria-label
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
+            themeToggle.setAttribute('aria-pressed', String(theme === 'dark'));
             themeToggle.setAttribute('aria-label', 
                 theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
             );
@@ -83,6 +84,8 @@ class SmoothScroll {
                         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
                     });
                     
+                    if (link.classList.contains('skip-link')) targetElement.focus({ preventScroll: true });
+
                     // Update URL without triggering scroll
                     history.pushState(null, null, targetId);
                 }
@@ -93,68 +96,37 @@ class SmoothScroll {
 // Active navigation link highlighting
 class NavigationHighlight {
     constructor() {
-        this.sections = [];
-        this.navLinks = [];
-        this.init();
-    }
-
-    init() {
-        // Get all sections and navigation links
-        this.sections = document.querySelectorAll('section[id]');
-        this.navLinks = document.querySelectorAll('#navigation-menu a[href^="#"]');
-        
-        if (this.sections.length > 0 && this.navLinks.length > 0) {
-            // Set initial active state based on URL hash only
-            this.setInitialActiveState();
-            
-            // Handle hash changes (but no scroll-based highlighting)
-            window.addEventListener('hashchange', () => {
-                this.handleHashChange();
-            });
-        }
-    }
-
-    setInitialActiveState() {
-        const hash = window.location.hash;
-        if (hash && hash !== '#') {
-            const targetId = hash.substring(1);
-            this.highlightNavLink(targetId);
-        }
-        // No default active state - only highlight when there's a hash in URL
-    }
-
-    handleHashChange() {
-        const hash = window.location.hash;
-        if (hash && hash !== '#') {
-            const targetId = hash.substring(1);
-            this.highlightNavLink(targetId);
-        } else {
-            // Clear all active states when there's no hash
-            this.clearAllActiveStates();
-        }
+        this.navLinks = [...document.querySelectorAll('#navigation-menu a[href^="#"]')];
+        let scheduled = false;
+        const update = () => {
+            scheduled = false;
+            const edge = document.getElementById('main-header').getBoundingClientRect().bottom + 48;
+            let current = 'about';
+            for (const link of this.navLinks) {
+                const id = link.hash.slice(1);
+                const section = document.getElementById(id);
+                if (section && section.getBoundingClientRect().top <= edge) current = id;
+            }
+            if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+                current = this.navLinks.at(-1).hash.slice(1);
+            }
+            this.highlightNavLink(current);
+        };
+        window.addEventListener('scroll', () => {
+            if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
+        }, { passive: true });
+        window.addEventListener('hashchange', update);
+        window.addEventListener('resize', update);
+        update();
     }
 
     highlightNavLink(activeId) {
-        // Remove active class from all links
-        this.navLinks.forEach(link => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-        });
-
-        // Add active class to current link
-        const activeLink = document.querySelector(`#navigation-menu a[href="#${activeId}"]`);
-        if (activeLink) {
-            activeLink.classList.add('active');
-            activeLink.setAttribute('aria-current', 'page');
+        for (const link of this.navLinks) {
+            const active = link.hash === '#' + activeId;
+            link.classList.toggle('active', active);
+            if (active) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
         }
-    }
-
-    // Method to clear all active states (useful for debugging)
-    clearAllActiveStates() {
-        this.navLinks.forEach(link => {
-            link.classList.remove('active');
-            link.removeAttribute('aria-current');
-        });
     }
 }
 
@@ -409,7 +381,7 @@ class MarkdownLoader {
     document.addEventListener('click', (e) => {
         const target = e.target;
         if (target && target.classList && target.classList.contains('hover-b')) {
-            spawnBeeFromElement(target);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) spawnBeeFromElement(target);
         }
     });
 })();
@@ -458,18 +430,6 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Add keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    // Handle keyboard navigation for theme toggle
-    if (e.key === 't' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault();
-        const themeToggle = document.getElementById('theme-toggle');
-        if (themeToggle) {
-            themeToggle.click();
-        }
-    }
-});
-
 // Party Hat Explosion Feature
 class PartyHatExplosion {
     constructor() {
@@ -479,7 +439,7 @@ class PartyHatExplosion {
 
     init() {
         // Find the logo link and add click handler
-        const logoLink = document.querySelector('#main-header a[href="#"]');
+        const logoLink = document.querySelector('#main-header .header-logo a');
         if (logoLink) {
             logoLink.addEventListener('click', (e) => {
                 e.preventDefault();
